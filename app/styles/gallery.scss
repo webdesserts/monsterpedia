@@ -1,0 +1,27 @@
+@include block('gallery') {
+
+  @include element('group') {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  @include element('group-title') {
+    flex-basis: 100%;
+    font-size: 3rem;
+    color: $blue5;
+    text-align: center;
+  }
+
+  @include element('image-box') {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    align-content: center;
+  }
+  @include element('image') {
+    margin: auto;
+    transform: scale(2);
+    image-rendering: pixelated;
+  }
+}

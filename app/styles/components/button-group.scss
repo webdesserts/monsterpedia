@@ -1,0 +1,47 @@
+@include block('button-group') {
+  $btn: $base3;
+  $btn-txt: $blue5;
+  $btn-selected: $blue4;
+  $btn-selected-txt: $base8;
+  $btn-active: $blue3;
+  $btn-active-txt: $white;
+
+  background-color: $blue3;
+  border-radius: 5px;
+
+  @include element('button') {
+    color: $btn-txt;
+    background-color: $btn;
+    transition: background-color 200ms ease,
+                box-shadow 200ms ease,
+                transform 200ms ease,
+                color 200ms ease;
+
+    &:first-child { border-radius: 5px 0 0 5px; }
+    &:last-child { border-radius: 0 5px 5px 0; }
+
+    &:focus { outline: none; }
+    &:hover {
+      background-color: $btn;
+      transform: translate(2px, -1px);
+    }
+    &:active {
+      color: $btn-active-txt;
+      background-color: $btn-active;
+      transform: none;
+      box-shadow: inset 2px 2px 5px $blue1;
+    }
+
+
+    @include modifier('selected') {
+      box-shadow: inset 2px 2px 5px $blue1;
+      color: $btn-selected-txt;
+      background-color: $btn-selected;
+      cursor: initial;
+      &:hover {
+        background-color: $btn-selected;
+        transform: none;
+      }
+    }
+  }
+}

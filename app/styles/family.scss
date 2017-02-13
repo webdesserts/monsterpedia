@@ -1,0 +1,39 @@
+@include block('family') {
+  display: flex;
+  flex-flow: row wrap;
+  @include element('nav') {
+    display: flex;
+    flex-basis: 100%;
+    padding: .25rem .25rem 0;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $blue5;
+    margin-bottom: 1rem;
+  }
+
+  @include element('link') {
+    border-radius: 5px 5px 0 0;
+    flex-grow: 1;
+    text-align: center;
+
+    &:active {
+      box-shadow: inset 0px 1px 4px $blue3;
+    }
+
+    @include modifier('active') {
+      background-color: $base8;
+      &:active { box-shadow: none; }
+    }
+
+    img {
+      margin: 16px;
+      transform: scale(3);
+      image-rendering: pixelated;
+    }
+  }
+
+  @include block('sortable-list') {
+    margin: 0 auto;
+  }
+
+}

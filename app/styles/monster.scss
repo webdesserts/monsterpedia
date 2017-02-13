@@ -1,0 +1,143 @@
+@include block('monster') {
+  display: flex;
+  flex-flow: row wrap;
+
+  /*============*
+    *   Header   *
+     *============*/
+
+  @include element('header') {
+    width: 100%;
+    position: relative;
+    background-color: $blue5;
+    padding: 1rem;
+  }
+
+  @include element('family') {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    height: 2.2rem;
+    padding: .3rem .5rem;
+    border-radius: 5px;
+
+    img {
+      margin: auto 8px;
+      transform: scale(2.5);
+      image-rendering: pixelated;
+    }
+
+    &:after {
+      position: relative;
+      display: inline-block;
+      top: 1px;
+      color: $blue2;
+      content: attr(data-label);
+      line-height: 1.25;
+      font-weight: bold;
+      margin-left: 4px;
+    }
+
+    &:hover { box-shadow: 1px 1px 4px $blue3; }
+    &:active { box-shadow: inset 1px 1px 4px $blue3; }
+  }
+
+  @include element('name') {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  @include element('image') {
+    display: flex;
+    width: 10rem;
+    height: 135px;
+    margin: .5rem;
+    align-content: center;
+    img {
+      margin: auto;
+      transform: scale(2.5);
+      image-rendering: pixelated;
+    }
+  }
+
+  @include element('stats') {
+    font-family: monospace;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px $base6;
+  }
+
+  @include element('leveling', 'endurance') {
+    background-color: $base7;
+    flex-basis: 20%;
+  }
+
+  @include element('core', 'leveling', 'endurance') {
+    display: flex;
+    flex-flow: inherit;
+    align-items: flex-end;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding: .5rem 1rem ;
+  }
+
+  @include element('stat') {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin: .25rem;
+
+    &:before {
+      font-size: .9rem;
+      opacity: .5;
+      content: attr(data-label);
+    }
+  }
+
+
+  /*=============*
+    *   Content   *
+     *=============*/
+
+  @include element('content') {
+    max-width: 40rem;
+    margin: 0 auto;
+
+    h3 {
+      font-size: 1.15rem;
+      border-bottom: 1px solid $base7;
+    }
+  }
+
+  @include element('skills') {
+    margin: 1rem 0;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid $base7;
+  }
+
+  @include element('skill') {
+    flex-grow: 1;
+    padding: 1rem;
+    + * { border-left: 1px solid $base7; }
+  }
+
+  @include element('breeding-pair') {
+    flex-basis: 100%;
+    display: flex;
+  }
+
+  @include element('pair-base', 'pair-mates') {
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
