@@ -1,39 +1,29 @@
 {
-  "name": "@integrity/hub",
-  "version": "0.1.0",
-  "description": "A hub of all things that have integrity",
-  "scripts": {
-    "dev": "gulp",
-    "build": "gulp build",
-    "build:styles": "gulp build:styles",
-    "build:scripts": "gulp build:scripts",
-    "test": "gulp test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/hub"
-  },
+  "name": "monsterpedia",
+  "version": "0.2.0",
+  "description": "A Dragon Warrior Monsters Encyclopedia",
   "author": "Michael C. Mullins",
-  "license": "ISC",
-  "dependencies": {
-    "@integrity/sass-common": "^0.3.1",
-    "history": "^1.13.0",
-    "immutable": "~3.7",
-    "isomorphic-fetch": "~2.2",
-    "lodash": "^3.10.1",
-    "react": "~0.14",
-    "react-dom": "~0.14",
-    "react-redux": "~4.0",
-    "react-router": "~1",
-    "redux": "~3.0.4",
-    "redux-simple-router": "0.0.7",
-    "redux-thunk": "^1.0.0"
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
   },
-  "devDependencies": {
-    "@integrity/react-registry": "^0.1.0",
-    "gulp": "git://github.com/gulpjs/gulp#4.0",
-    "react-addons-test-utils": "~0.14",
-    "redux-devtools": "~2",
-    "redux-devtools-diff-monitor": "~3"
+  "dependencies": {
+    "history": "^1.13.0",
+    "immutable": "^3.7",
+    "isomorphic-fetch": "^2.2",
+    "lodash": "^3.10.1",
+    "neutrino": "^8.1.2",
+    "prop-types": "^15.6.1",
+    "react": "^15",
+    "react-dom": "^15",
+    "react-redux": "^4.0",
+    "react-router": "^1",
+    "react-scripts": "1.1.1",
+    "redux": "^3.0.4",
+    "redux-simple-router": "0.0.7",
+    "redux-thunk": "^1.0.0",
+    "styled-components": "^3.2.1"
   }
 }
