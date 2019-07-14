@@ -1,7 +1,7 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { colors } from './common/styles'
 
-injectGlobal`
+export const RootStyles = createGlobalStyle`
 *, *:before, *:after {
   box-sizing: inherit;
 }

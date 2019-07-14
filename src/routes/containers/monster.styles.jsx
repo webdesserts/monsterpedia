@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { colors, mixins } from '../../common/styles'
-import * as Router from 'react-router'
+import * as Router from 'react-router-dom'
 
 export const MonsterWrapper = styled.div`
   display: flex;
@@ -112,11 +112,11 @@ export const smallStatGroup = css`
   flex-basis: 20%;
 `
 
-export const Core = StatGroup.extend``
-export const Leveling = StatGroup.extend`
+export const Core = styled(StatGroup)``
+export const Leveling = styled(StatGroup)`
   ${smallStatGroup}
 `
-export const Endurance = StatGroup.extend`
+export const Endurance = styled(StatGroup)`
   ${smallStatGroup}
 `
 
@@ -145,5 +145,5 @@ export const PairPiece = styled.div`
   flex-flow: row wrap;
 `
 
-export const PairBase = PairPiece.extend``
-export const PairMates = PairPiece.extend``
+export const PairBase = styled(PairPiece)``
+export const PairMates = styled(PairPiece)``

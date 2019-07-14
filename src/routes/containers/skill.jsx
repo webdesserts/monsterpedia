@@ -4,8 +4,8 @@ import * as el from './skills.styles'
 
 class Skill extends React.Component {
   render () {
-    let { store } = this.props
-    let { skill } = this.props.params
+    let { store, match } = this.props
+    let { skill } = match.params
 
     return (
       <el.Page>

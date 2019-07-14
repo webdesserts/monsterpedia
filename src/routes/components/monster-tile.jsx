@@ -9,7 +9,7 @@ export default class MonsterTile extends React.Component {
     let isFamily = _.isNumber(monster)
 
     let name = isFamily ? families[monster] : monster
-    let img_path = isFamily ? `/img/icon-${name}.png` : `/img/${monster}.png`
+    let img_path = isFamily ? `/img/icon-${name.toLowerCase()}.png` : `/img/${monster.toLowerCase()}.png`
     let link_path = isFamily ? `/families/${name}` : `/monster/${name}`
     let description = isFamily ? `Any ${name}` : name
     return (

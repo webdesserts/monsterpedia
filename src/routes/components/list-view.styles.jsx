@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../common/styles'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export const ListViewWrapper = styled.div`
   max-width: 35rem;

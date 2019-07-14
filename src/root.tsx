@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
+import { Store } from 'redux';
 import Routes from './routes/routes'
-import './root.styles'
+import { RootStyles } from './root.styles'
 
 /*
  * <Root/>
@@ -12,18 +12,17 @@ import './root.styles'
  * thing else that has wide-reaching affects or needs to wrap the entire app.
  */
 
-export default class Root extends React.Component {
-  static propTypes = {
-    store: PropTypes.object,
-    history: PropTypes.object
-  }
+ type Props = {
+   store: Store,
+ }
 
-  render () {
-    let { store, history } = this.props;
-    return (
+export default function Root ({ store }: Props) {
+  return (
+    <div>
+      <RootStyles />
       <Provider store={store}>
-        <Routes history={history}/>
+        <Routes/>
       </Provider>
-    )
-  }
+    </div>
+  )
 }

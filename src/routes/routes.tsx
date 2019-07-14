@@ -1,5 +1,6 @@
 import React from 'react'
-import { Router, Route, IndexRedirect } from 'react-router'
+import { Redirect } from 'react-router'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Layout from './layout'
 import Families from './containers/families'
@@ -20,16 +21,18 @@ import Skill from './containers/skill'
  *  https://github.com/rackt/react-router/tree/latest/docs
  */
 
-export default function Routes ({history}) {
+export default function Routes () {
   return (
-    <Router history={history}>
-      <Route path="/" component={Layout}>
-        <IndexRedirect to="families" />
-        <Route path="families(/:family)" component={Families} />
-        <Route path="monster/:monster" component={Monster} />
-        <Route path="skills" component={Skills} />
-        <Route path="skills/:skill" component={Skill} />
-      </Route>
-    </Router>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Redirect exact from="/" to="/families/" />
+          <Route exact path="/families/:family?" component={Families} />
+          <Route exact path="/monster/:monster" component={Monster} />
+          <Route exact path="/skills" component={Skills} />
+          <Route exact path="/skills/:skill" component={Skill} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   )
 }

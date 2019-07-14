@@ -8,12 +8,12 @@ import * as El from './monster.styles'
 
 class MonsterView extends React.Component {
   render () {
-    let { store, params } = this.props
-    let { monster } = params
+    let { store, match } = this.props
+    let { monster } = match.params
     let stats = store.stats[monster]
     let skills = store.skills[monster]
     //let resistances = this.props.resistances[monster]
-    let bredWith = _.where(store.breeding, {'result': monster})
+    let bredWith = _.filter(store.breeding, {'result': monster})
     let breedsInto = _(store.breeding)
       .filter((pair, i) => pair.base.includes(monster) || pair.mate.includes(monster) || pair.base.includes(store.families.indexOf(stats.family)) || pair.mate.includes(store.families.indexOf(stats.family)))
       .map((combo) => combo.result)

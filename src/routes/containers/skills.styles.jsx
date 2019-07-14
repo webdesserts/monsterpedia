@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../common/styles'
-import * as Router from 'react-router'
+import * as Router from 'react-router-dom'
 
 export const Page = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Skill = styled.div`
   color: inherit;
 `
 
-export const SkillLink = Skill.withComponent(Router.Link).extend`
+export const SkillLink = styled(Skill).attrs({ as: Router.Link })`
   transition: transform 200ms ease;
 
   &:hover {

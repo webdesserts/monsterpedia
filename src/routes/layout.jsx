@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Router from 'react-router'
+import * as Router from 'react-router-dom'
 import styled from 'styled-components'
 import { colors } from '../common/styles'
 

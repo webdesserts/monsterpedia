@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import * as Router from 'react-router'
+import * as Router from 'react-router-dom'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import SortableList from '../components/sortable-list-view'
@@ -23,7 +23,8 @@ class Families extends React.Component {
   }
 
   render () {
-    let { store, params } = this.props
+    let { store, match } = this.props
+    let { params } = match;
     let monsters = this.filterByFamily(store.names, store.stats, params.family)
 
     return (
@@ -87,7 +88,7 @@ const Link = styled(Router.Link)`
   }
 `
 
-const IndexLink = Link.withComponent(Router.IndexLink)
+const IndexLink = Link.withComponent(Router.NavLink)
 
 const List = styled(SortableList)`
   margin: 0 auto;
